@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html style="overflow: hidden;">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运营管理系统-登录</title>
+    <link rel="shortcut icon" href="${ctxPath}/static/favicon.ico">
+    <link href="${ctxPath}/static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="${ctxPath}/static/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/animate.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/main.css" rel="stylesheet">
+    <script>if (window.top !== window.self) {
+        window.top.location = window.location;
+    }</script>
+    <script src="${ctxPath}/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="${ctxPath}/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <style>
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+        }
+        input{outline: none;}
+    </style>
+</head>
+
+<body style="overflow: hidden;">
+    <!--<div class="header">
+      <h1 class="headerLogo"><a href="#" target="_blank" title="德邦证券"><img src="${ctxPath}/static/img/logo.png" alt="运营管理系统" />|运营管理系统</a></h1>
+    </div>-->
+
+    <div class="main" id="mainBg" style="background-color: rgb(214, 215, 219);height: calc(100% - 30px)">
+        <div class="main-inner" id="mainCnt" style="background-image: url(${ctxPath}/static/img/front.png);background-size: 100% 100%;height: 100%;height: 100%;">
+        </div>
+        <!--登录框-->
+        <div id="loginBlock" class="login tab-2" style="background-image: url(${ctxPath}/static/img/loginBoxBg.png);background-size: 100% 100%;">
+        <!--  <div class="loginFunc">
+            <div id="lbApp" class="loginFuncApp">帐号登录</div>
+          </div>-->
+          <!-- 安全登录 -->
+          <div class="m-cnt" style="position: relative;">
+          <h4 style="color: red;padding-left:30px;position: absolute;bottom:42px; left: 25%;">${tips!}</h4>
+          <form class="m-t" role="form" action="${ctxPath}/login" method="post" id="login-form">
+            <div class="m-container">
+                <div class="inputbox" id="account-box">
+                    <div class="u-logo" id="auto-id-1516457717212">
+                        <div class="u-logo-img1"></div>
+                    </div>
+                    <div class="u-input box" id="auto-id-1516457717210">
+                        <input type="text" name="username" value="${username!}" placeholder="用户名" required="" style="border:0px;height:30px;width:175px;padding:0;margin:0;-webkit-box-shadow:none; -webkit-text-fill-color: none;outline: none;">
+                    </div>
+                    <div class="u-tip" id="auto-id-1516457717184" style="display: block;">
+                        <div class="u-success u-clear"></div>
+                    </div>
+                 </div>
+                <div class="inputbox">
+                    <div class="u-logo" id="auto-id-1516459869763">
+                        <div class="u-logo-img2"></div>
+                    </div>
+                    <div class="u-input box">
+                        <input type="password" name="password" value="${password!}" class="j-inputtext dlpwd" placeholder="密码" required="" style="border:0px;height:30px;width:175px;padding:0;margin:0;-webkit-box-shadow:none; -webkit-text-fill-color: none;outline: none;">
+                    </div>
+                </div>
+                <div class="m-unlogin">
+                    <div class="b-unlogn j-unlogn">
+                        <span class="u-checkbox tabfocus" id="auto-id-1516461006037">
+                            <input id="un-login" type="checkbox" name="remember" class="un-login">
+                        </span>
+                        <label for="un-login" id="auto-id-1516461006036">记住我</label>
+                    </div>
+                </div>
+            @if(tool.getKaptchaOnOff() == true){
+            <div class="m-kaptcha">
+                <div class="col-sm-8" style="padding-left: 5px; padding-right: 0px;">
+                    <input type="text" name="kaptcha" placeholder="验证码" required="" style="border:0px;height:40px;width:160px;padding:0;margin:0;">
+                </div>
+                <div class="col-sm-4" style="padding-right: 5px; padding-left: 0px;">
+                    <img src="${ctxPath}/kaptcha" id="kaptcha" width="100%" height="100%"/>
+                </div>
+            </div>
+            @}
+            @if(tool.getKaptchaOnOff() == true){ 
+             <div class="f-cb loginbox"  style="top:260px;">
+                 <button type="submit" class="u-loginbtn btncolor tabfocus btndisabled">登&nbsp;&nbsp;录</button>
+             </div>
+            @}
+            
+            @if(tool.getKaptchaOnOff() == false){ 
+             <div class="f-cb loginbox"  style="top:216px;">
+                 <button type="submit" class="u-loginbtn btncolor tabfocus btndisabled">登&nbsp;&nbsp;录</button>
+             </div>
+            @}
+            
+            </div>
+          </form>
+          </div>
+        </div>
+    </div>
+
+    <div id="footer" class="footer">
+        <div class="footer-inner" id="footerInner">
+            <div class="footerNav">
+                <span class="copyright">德邦证券版权所有&copy;2018-2020</span>
+            </div>
+      </div>
+    </div>
+</body>
+    <script>
+    $(function () {
+
+        $("#kaptcha").on('click', function () {
+            debugger;
+            $("#kaptcha").attr('src', '${ctxPath}/kaptcha?' + Math.floor(Math.random() * 100)).fadeIn();
+        });
+    });
+    </script>
+</html>

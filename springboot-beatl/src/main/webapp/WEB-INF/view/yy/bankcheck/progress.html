@@ -1,0 +1,47 @@
+@layout("/common/_container.html"){
+<style type="text/css">
+    body{ background-color: #1e2420; }
+    .graph{ width: 100%; border: 1px solid #1e9fff; height: 25px; }
+    #bar{ display: block; background: #1e9fff; float: left; height: 100%; text-align: center; font-family: Verdana; line-height: 25px; color: #FFF; }
+</style>
+<script src="${ctxPath}/static/js/jquery.min.js"></script>
+<script src="${ctxPath}/static/modular/yy/bankcheck/list.js"></script>
+<div class="graph">
+    <strong id="bar" style="width:1%;"></strong>
+</div>
+<script type="text/javascript">
+    function fn(obj){
+        return document.getElementById(obj);
+    }
+    function go(){
+        fn("bar").style.width = parseInt(fn("bar").style.width) + 1 + "%";
+        fn("bar").innerHTML = fn("bar").style.width;
+        if(fn("bar").style.width == "99%"){
+            window.clearInterval(bar);
+            debugger
+            $.ajax({
+                type:"post",
+                url:Feng.ctxPath + '/bankcheck/download',
+                data:{"data":sessionStorage.getItem("bussdate")},
+                success: function () {
+                    Feng.success("文件下载成功!");
+                    YlResult.close();
+                },
+                error: function () {
+                    Feng.error("下载文件失败!");
+                    YlResult.close();
+                }
+            })
+        }
+    }
+    var bar = window.setInterval("go()",50);
+    window.onload = function(){
+        bar;
+    }
+</script>
+@}
+
+
+
+
+

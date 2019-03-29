@@ -1,0 +1,132 @@
+@layout("/common/_container.html"){
+<link href="${ctxPath}/static/css/yyBankCheck/yyBankCheck.css" rel="stylesheet">
+<div class="row" style="min-width: 1100px;">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <!--<div class="ibox-title">-->
+                <!--<h5>银行数据核对</h5>-->
+            <!--</div>-->
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <input type="hidden" id="type" value="" />
+                    <input type="hidden" id="batchno" value="" />
+                    <div class="layui-tab layui-tab-brief" lay-filter="demo">
+					    <ul class="layui-tab-title" style="opacity: 0;margin-top: -20px;">
+					    	<li class="layui-this" id="step1">单步文件核对</li>
+					    	<li id="step2">对账文件核对</li>
+					    	<li id="step3">核对结果确认</li>
+					    </ul>
+						<ul class="stepBox" >
+							<img src="${ctxPath}/static/img/step1.png" alt="" class="step1">
+							<img src="${ctxPath}/static/img/step2.png" alt="" class="step2">
+							<img src="${ctxPath}/static/img/step3.png" alt="" class="step3">
+						</ul>
+						<div style="margin-left: 38px">
+							<div class="heduiBox" style="">
+								<#TimeCon id="bussdate" name="核对日期" />
+							</div>
+						</div>
+						<div class="row selecteBox" style="margin-left: 38px;margin-top: 10px;">
+							<span style="display: inline-block;width: 100px;font-weight: 600;float: left;">类别筛选：</span>
+							<div class="" style="width: 25%;float:left;min-width: 100px;max-width: 120px;">
+								<input type="checkbox" id="all" onchange="changeAll();"  checked/>
+								<label class="control-label">全选</label>
+							</div>
+							<div class="" style="width: 25%;float: left;min-width: 100px;max-width: 120px;">
+								<input type="checkbox" name="each" value="1" onchange="change();"  checked/>
+								<label class="control-label">信用银行</label>
+							</div>
+							<div class="" style="width: 25%;float:left;min-width: 100px;max-width: 120px;">
+								<input type="checkbox" name="each" value="2" onchange="change();"  checked/>
+								<label class="control-label">普通银行</label>
+							</div>
+							<div class="" style="width: 25%;float:left;min-width: 100px;max-width: 120px;">
+								<input type="checkbox" name="each" value="3" onchange="change();"  checked/>
+								<label class="control-label">恒生柜台</label>
+							</div>
+						</div>
+
+                        <div class="layui-tab-content">
+                         	<div class="layui-tab-item layui-show">
+	                         	<div class="row row-lg selecteBox">
+									<span class="resultShow">结果显示：</span>
+	                                <div class="col-sm-2">
+		                                    <input type="checkbox" name="gp1" onchange="changeGp1();"/>
+		                                    <label class="control-label"><img src="${ctxPath}/static/img/success.png"/><span id="v1_success">正确(0)条</span></label>
+		                            </div>
+		                            <div class="col-sm-2">
+		                                    <input type="checkbox" name="gp1" onchange="changeGp1();"/>
+		                                    <label class="control-label"><img src="${ctxPath}/static/img/error.png"/><span id="v1_error">错误(0)条</span></label>
+		                            </div>
+		                            <div class="col-sm-2">
+		                                    <input type="checkbox" name="gp1" onchange="changeGp1();"/>
+		                                    <label class="control-label"><img src="${ctxPath}/static/img/alert.png"/><span id="v1_alert">警告(0)条</span></label>
+		                            </div>
+	                                <div class="col-sm-6 handleBox"style="position: relative;">
+	                                       <#button name="单户检查" icon="" clickFun="YlResult.openDetail()"/>
+										   <#button name="获取文件" icon="" clickFun="YlResult.download()"/>
+										   <div class="handle"><button onclick="stepOne()"> 下一步</button></div>
+	                                </div>
+	                         	</div>
+								<div class="tips">注意：请务必保证银行，新意和恒生系统等相关文件已导入或存放在指定位置！</div>
+                            	<#table id="YlResultTable"/>
+                         	</div>
+						 	<div class="layui-tab-item">
+                            	<div class="row row-lg selecteBox">
+									<span class="resultShow">结果显示：</span>
+									<div class="col-sm-2 ">
+										<input type="checkbox" name="gp2" onchange="changeGp2();"/>
+										<label class="control-label"><img src="${ctxPath}/static/img/success.png"/><span id="v2_success">正确(0)条</span></label>
+									</div>
+									<div class="col-sm-2">
+										<input type="checkbox" name="gp2" onchange="changeGp2();"/>
+										<label class="control-label"><img src="${ctxPath}/static/img/error.png"/><span id="v2_error">错误(0)条</span></label>
+									</div>
+									<div class="col-sm-2">
+										<input type="checkbox" name="gp2" onchange="changeGp2();"/>
+										<label class="control-label"><img src="${ctxPath}/static/img/alert.png"/><span id="v2_alert">警告(0)条</span></label>
+									</div>
+									<div class="col-sm-3 handleBox">
+										<#button name="数据核对" icon="" clickFun="YlResult1.openDetail()"/>
+										<div class="handle handle2"><button button_type="pro" onclick="stepTwo(this)">上一步</button><button button_type="next" onclick="stepTwo(this)">下一步</button></div>
+									</div>
+								</div>
+								<div class="tips">注意：请务必保证银行，新意和恒生系统等相关文件已导入或存放在指定位置！</div>
+                            	<#table id="YlResultTable1"/>
+                         	</div>
+                         	<div class="layui-tab-item">
+                            	<div class="row row-lg selecteBox">
+									<span class="resultShow">结果显示：</span>
+									<div class="col-sm-2 ">
+										<input type="checkbox" name="gp3" onchange="changeGp3();"/>
+										<label class="control-label"><img src="${ctxPath}/static/img/success.png"/><span id="v3_success">正确(0)条</span></label>
+									</div>
+									<div class="col-sm-2">
+										<input type="checkbox" name="gp3" onchange="changeGp3();"/>
+										<label class="control-label"><img src="${ctxPath}/static/img/error.png"/><span id="v3_error">错误(0)条</span></label>
+									</div>
+									<div class="col-sm-2">
+										<input type="checkbox" name="gp3" onchange="changeGp3();"/>
+										<label class="control-label"><img src="${ctxPath}/static/img/alert.png"/><span id="v3_alert">警告(0)条</span></label>
+									</div>
+									<div class="col-sm-3 handleBox">
+										<#button name="确认结果" icon="" clickFun="YlResult2.ensure()"/>
+										<#button name="刷新结果" icon="" clickFun="YlResult2.search()"/>
+										<div class="handle"><button onclick="stepThree()">上一步</button></div>
+									</div>
+								</div>
+								<div class="tips">注意：请务必保证银行，新意和恒生系统等相关文件已导入或存放在指定位置！</div>
+                            	<#table id="YlResultTable2"/>
+                         	</div>
+                        </div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/yy/bankcheck/list.js?v=${date(),'yyyyMMddHHmmss'}"></script>
+<script src="${ctxPath}/static/modular/yy/bankcheck/list1.js?v=${date(),'yyyyMMddHHmmss'}"></script>
+<script src="${ctxPath}/static/modular/yy/bankcheck/list2.js?v=${date(),'yyyyMMddHHmmss'}"></script>
+<script src="${ctxPath}/static/modular/yy/bankcheck/common.js?v=${date(),'yyyyMMddHHmmss'}"></script>
+@}

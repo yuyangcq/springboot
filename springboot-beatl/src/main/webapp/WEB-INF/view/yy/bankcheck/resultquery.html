@@ -1,0 +1,52 @@
+@layout("/common/_container.html"){
+<link href="${ctxPath}/static/css/yyBankCheck/dataimport.css" rel="stylesheet">
+<div class="row resultquery">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <!--<div class="ibox-title">-->
+                <!--<h5>历史核对结果查询</h5>-->
+            <!--</div>-->
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <input type="hidden" id="type" value="" />
+                    <input type="hidden" id="batchno" value="" />
+
+                    <div class="row" style="margin-left: 0px!important;">
+                        <div class="heduiBox" style="">
+                            <#TimeCon id="bussdate" name="查询日期" />
+                        </div>
+						<div class="col-sm-1 searchBox">
+							<#button name="搜索" icon="" clickFun="YlResult.search()"/>
+						</div>
+					</div>
+
+                    <div class="row row-lg" style="margin-left: 0px!important;margin-top: 10px;">
+                            <span class="resultShow" >结果显示：</span>
+                            <div class="col-sm-2 ">
+                                <input type="checkbox" name="gp1" onchange="changeGp1();"/>
+                                <label class="control-label"><img src="${ctxPath}/static/img/success.png"/><span id="v1_success">正确(0)条</span></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="checkbox" name="gp1" onchange="changeGp1();"/>
+                                <label class="control-label"><img src="${ctxPath}/static/img/error.png"/><span id="v1_error">错误(0)条</span></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="checkbox" name="gp1" onchange="changeGp1();"/>
+                                <label class="control-label"><img src="${ctxPath}/static/img/alert.png"/><span id="v1_alert">警告(0)条</span></label>
+                            </div>
+
+                    </div>
+
+                    <div class="layui-tab layui-tab-brief"><#table id="QueryResultTable"/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="${ctxPath}/static/modular/yy/bankcheck/resultquery.js?v=${date(),'yyyyMMddHHmmss'}"></script>
+<script>
+
+
+</script>
+@}

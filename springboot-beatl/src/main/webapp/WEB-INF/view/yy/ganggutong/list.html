@@ -1,0 +1,59 @@
+@layout("/common/_container.html"){
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <!--<div class="ibox-title">-->
+                <!--<h5></h5>-->
+            <!--</div>-->
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <div class="layui-row">
+                            <div class="layui-col-md1" style="text-align: left">
+                                <span class="resultShow" style="line-height: 39px;">报送日期：</span>
+                            </div>
+                            <div class="layui-col-md3" style="text-align: left">
+                                <input class="form-control" id="bussdate" style="min-width: 80px;width: 50%;" placeholder="请选择">
+                            </div>
+                            <div  id="menuTableToolbar" role="group" style="text-align: right">
+                                <input type="file" name="annexUrl" id="annexUrl" multiple="multiple" onchange="Ganggutong.importFile(this)" title=""style="display:none"/>
+                                <button class="layui-btn layui-btn-normal upload" lay-data="{accept: 'file'}">上传文件</button>
+                                <button class="layui-btn layui-btn-normal" onclick="Ganggutong.clearData()">数据清空</button>
+                                <button class="layui-btn layui-btn-normal" onclick="Ganggutong.mergeFile()">文件合并</button>
+                                <button class="layui-btn" onclick="Ganggutong.transport()">发送</button>
+                                <button class="layui-btn layui-btn-warm" onclick="Ganggutong.download()">文件下载</button>
+                            </div>
+                        </div>
+                        <div class="layui-row">
+                            <div class="layui-col-md3">
+                                <span id="resultShow" class="resultShow" style="line-height: 39px;">报送人：</span>
+                            </div>
+                            <div class="layui-col-md3">
+                                <span id="result" class="resultShow" style="line-height: 39px;">报送结果：</span>
+                            </div>
+                            <!--<div style="text-align: right">-->
+                                <!--<button class="layui-btn" onclick="Ganggutong.transport()">发送</button>-->
+                                <!--<button class="layui-btn layui-btn-warm" onclick="Ganggutong.download()">文件下载</button>-->
+                            <!--</div>-->
+                        </div>
+                        <#table id="GanggutongTable"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/yy/ganggutong/list.js"></script>
+
+<style>
+    input[id="annexUrl"] {
+        color: transparent;
+    }
+</style>
+<script>
+    debugger
+    $('.upload').click(function(){
+        $('#annexUrl').trigger('click');
+    });
+</script>
+@}

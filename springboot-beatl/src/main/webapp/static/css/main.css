@@ -1,0 +1,231 @@
+body{color:#000;background:#fff;font-size:12px;line-height:166.6%;text-align:center}
+body,button,input,select{font-family:Microsoft YaHei,verdana,Simsun,STXihei;zoom:1}
+button,h1,h2,h3,input,select{font-size:100%}
+body,form,h1,h2,h3,img,li,p,ul{margin:0;padding:0;border:0}
+button,img,input,select{margin:0;line-height:normal}
+select{padding:1px}
+ul{list-style:none}
+aside,figcaption,figure,footer,header,hgroup,nav,section{display:block;margin:0;padding:0;border:none}
+a{text-decoration:none;color:#848585}
+a:hover{color:#626262}
+.fontWeight{font-weight:700}
+#remAutoLoginTxt,#styleConfText,.domain,.nouserselect{-moz-user-select:none;-webkit-user-select:none;user-select:none}
+.noscriptTitle{line-height:32px;font-size:24px;color:#d90000;padding:20px 0;font-weight:700;background:#fff}
+.noscriptLink{text-decoration:underline;color:#005590;font-size:14px;font-weight:400}
+.fontWeight{font-weight:700}
+.unvisi{visibility:hidden}
+.txt-suc{color:#22ac38}
+.txt-err{color:#e60012}.txt-yixin{color:#279c7b}
+#extText li,#mobtips_arr,#mobtips_close,.btn,.btn-moblogin,.headerIntro,.ico,.locationTestTitle,.locationTestTitleClose,.loginFormIpt,.servSelected,.themeCtrl a,.themeText li,.verify-input-line,.verSelected{
+	background-image:url(../img/bg_v3.png)}
+	#mobtips,#mobtips_arr,#mobtips_close,#whatAutologinTip,.domain,.footerLogo,.footerNav,.formIpt,.headerIntro,.headerLogo,.headerNav{
+	position:absolute}.ico-uid{background-position:-154px -64px}
+	.ico-pwd,.ico-uid{width:14px;height:16px}.ico-pwd{background-position:-178px -64px}
+	.ico-miniAlert{margin-right:3px;display:inline-block;width:14px;height:14px;background-position:-132px -112px;vertical-align:top}
+	.ico-arr{display:inline-block;width:7px;height:12px;vertical-align:baseline;background-position:-160px -112px}
+	.ico-arr-d{background-position:-160px -110px}.ico-arr-d-focus,.loginFormConf a:hover .ico-arr-d{background-position:-176px -110px}
+	*+html .ico-arr-d{background-position:-160px -112px}*+html .ico-arr-d-focus,*+html .loginFormConf a:hover .ico-arr-d{
+	background-position:-176px -112px}
+.header{width:1000px;height:64px;position:relative;margin:0 auto;z-index:2;overflow:hidden}
+.headerLogo{top:17px;left:50px}
+.main{height:600px;background:#fff;position:relative;min-width:1000px}
+.main-inner-iframe{border:0;width:100%;height:600px;overflow:hidden}
+#mainCnt{width:100%;clear:both;background-repeat:no-repeat;background-position:top}
+#mainCnt,#theme{height:600px;position:relative}
+#theme{margin:0 auto;width:1000px;overflow:hidden}
+.themeLink{height:274px;width:430px;display:block;outline:0}
+.themeText{margin-left:26px}
+.themeText li{line-height:22px;-line-height:24px;height:24px;color:#858686;text-indent:12px;background-position:-756px -72px;
+background-repeat:no-repeat}
+.themeText li a{color:#005590;text-decoration:underline}
+.login{
+	width:323px;
+    height:400px;
+    padding:13px 14px 15px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+	text-align:left;position:absolute;z-index:2;
+    /*background:url(../img/login_v5.png) no-repeat;
+    -background-image:url(../img/login_ie6_v5.png)*/
+}
+.unishadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.2);-webkit-box-shadow:0 1px 3px 0 rgba(0,0,0,.2);
+-moz-box-shadow:0 1px 3px 0 rgba(0,0,0,.2)}
+.loginFunc{width:100%;height:47px;overflow:hidden;clear:both}
+.loginFuncApp,.loginFuncNormal{width:148px;height:100%;overflow:hidden;position:relative;line-height:46px;
+float:left;font-size:14px;text-align:center;+line-height:48px;color:#626262;cursor:pointer}
+.loginFuncApp{padding-left:15px;width:132px;border-right:none;background:url("../img/icon_code.png") 28px 17px no-repeat}
+.tab-2{background-position:-323px 0}
+.tab-1 #appLoginTab,.tab-2 #normalLoginTab,.tab-22 #extVerSelect{display:block}
+.tab-1 #normalLoginTab,.tab-2 #appLoginTab,.tab-22 #extText{display:none}
+.loginForm{position:relative;padding-top:40px}#login163{height:310px}
+.loginFormIpt{position:relative;width:240px;height:42px;line-height:42px;margin:0 0 20px 25px;
+padding-right:5px;clear:both;background-position:0 -352px;z-index:2}
+.loginFormIpt .ico{position:absolute;left:9px;top:13px;z-index:1}.loginFormIpt-focus{box-shadow:0 0 5px rgba(2,145,252,.5)}
+.loginFormIpt-focus .placeholder{color:#c9c9c9}.loginFormBtn{position:relative;width:245px;height:38px;margin:18px 0 0 25px}
+.formIpt{width:205px;padding:9px 0 10px;ime-mode:disabled;height:21px;top:1px;left:28px;color:#333;font-size:14px;font-weight:700;border:none;
+font-family:verdana;line-height:21px;background:transparent!important}
+.formIpt:focus{outline:0}.showPlaceholder .placeholder{visibility:visible;cursor:text}
+.placeholder{color:#c9c9c9;font-size:14px;position:absolute;left:30px;top:14px;line-height:14px;visibility:hidden;background:none}
+.domain{padding-left:5px;width:75px;height:33px;line-height:33px;
+color:#616161;font-size:14px;overflow:hidden;display:block;right:8px;top:4px;white-space:nowrap}
+.loginFormCheck{height:14px;line-height:14px;color:#555;margin-left:25px;clear:both;width:245px;position:relative;z-index:1}
+.loginFormCheckInner{line-height:13px;width:150px;float:left;position:relative}.forgetPwdLine{text-align:right}
+.ico-checkbox{display:inline-block;width:13px;height:13px;background-position:-40px -160px;vertical-align:middle;cursor:pointer}
+.autoLogin-checked .ico-checkbox{background-position:-40px -180px}
+.btn{width:110px;height:38px;float:left;text-align:center;cursor:pointer;border:0;padding:0;
+font-weight:700;font-size:14px;display:inline-block;vertical-align:baseline;line-height:38px;outline:0;background-color:transparent}
+.btn-main{color:#fff;box-shadow:0 2px 5px rgba(0,28,88,.3)}.btn-side{color:#6d798c;box-shadow:0 2px 5px rgba(0,0,0,.1)}
+.btn-login{background-position:0 -208px}.btn-login-hover{background-position:0 -256px}
+.btn-login-active{background-position:0 -304px;color:#b5d1ee}.btn-reg{background-position:-117px -208px;float:right}
+.btn-reg-hover{background-position:-117px -256px;color:#347bc7}.btn-reg-active{background-position:-117px -304px;color:#6d798c}
+.btn-cancel{width:124px;background-position:-160px -565px}.btn-cancel-hover{background-position:-160px -613px;color:#347bc7}
+.btn-cancel-active{background-position:-160px -661px;color:#6d798c}.loginFormConf{height:14px;line-height:14px;
+margin-left:25px;margin-top:18px;clear:both;width:245px;position:relative;color:#848585;z-index:1}
+.footer{margin:0 auto}
+.footer-inner{width:1000px;height:100%;overflow:visible;margin:0 auto;color:#848585;position:relative;line-height: 30px;}
+.footerLogo{top:24px;left:35px}.footerNav{right:15px}.copyright,.footerNav a{margin-left:12px}
+.loginForm{height:413px;padding:0}
+.login-dashi-text{font-size:14px}
+.appLogin-extend{width:231px;margin:20px auto}.appLogin-extend-aside{float:left}
+.appLogin-extend-main{overflow:hidden;font-size:14px;text-align:left;padding-left:11px}
+.appLogin-extend-main .appLogin-extend-text1{font-size:12px;color:#949494}
+.appLogin-extend-main a{font-size:12px;color:#4ea9f6;cursor:pointer}.appLogin-extend-main a:hover{text-decoration:underline}
+.appLoginWaitInner{padding-top:6px}
+.m-cnt .inputbox .u-logo {
+    width: auto;
+    padding: 0 7px 0 9px;
+}
+.m-cnt #account-box .u-logo div {
+    background: url(../img/bg_v3.png) -154px -64px no-repeat;
+}
+
+.m-cnt .inputbox .u-input {
+    width: 205px;
+}
+.m-cnt .u-logo {
+    float: left;
+    width: 21px;
+    text-align: center;
+    padding: 0 5px 0 10px;
+}
+
+.m-cnt .inputbox .u-logo div {
+    background: url(../img/bg_v3.png) -178px -64px no-repeat;
+}
+
+.m-cnt .inputbox .u-logo div {
+    width: 14px;
+    height: 16px;
+    margin-top: 13px;
+}
+.m-cnt .u-logo, .m-cnt .u-input, .m-cnt .u-tip {
+    height: 100%;
+}
+.m-cnt {
+    height: 70%;
+    padding: 0;
+    margin-top: 30%;
+}
+#login-form {
+    height: 100%;
+}
+.m-container {
+    height: 100%;
+    position: relative;
+}
+.m-cnt #account-box {
+    top: 40px;
+}
+
+.m-cnt .inputbox {
+    top: 102px;
+}
+.m-cnt .inputbox {
+    position: absolute;
+    right: 25px;
+    width: 245px;
+    height: 42px;
+    line-height: 42px;
+    margin-left: 25px;
+    background: url(../img/bg_v3.png) 0 -352px no-repeat;
+    border: 0;
+}
+.m-cnt .inputbox .u-input {
+    width: 205px;
+}
+.m-cnt .inputbox .u-input .j-inputtext {
+    line-height: 22px;
+    padding-left: 0;
+    background: 0;
+}
+.m-cnt .m-unlogin {
+    position: absolute;
+    top: 162px;
+    left: 22px;
+    padding: 0;
+}
+
+.m-cnt .m-kaptcha {
+    position: absolute;
+    top: 202px;
+    padding: 0;
+}
+
+.m-cnt .m-kaptcha{
+    position: absolute;
+    right: 25px;
+    width: 245px;
+    height: 42px;
+    line-height: 42px;
+    margin-left: 25px;
+    background: url(../img/bg_v3.png) 0 -352px no-repeat;
+    border: 0;
+}
+
+.m-cnt .m-unlogin .b-unlogn {
+    position: relative;
+    padding: 0;
+    margin-right: 0;
+    border-right: 0;
+}
+.m-cnt .m-unlogin .b-unlogn {
+    position: relative;
+    padding: 0 0 0 0;
+    margin-right: 0;
+    border-right: none;
+}
+.m-cnt .m-unlogin .b-unlogn {
+    display: block;
+    width: 104px;
+    float: left;
+    /*border-left: solid 1px #ccc;*/
+    margin-left: 8px;
+}
+.loginbox {
+    position: absolute;
+    width: 100%;
+    height: 42px;
+}
+.loginbox .u-loginbtn {
+    height: 42px;
+    line-height: 38px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #d6ae3c;
+    border-radius: 10px;
+    border: 1px;
+}
+.u-loginbtn {
+    display: block;
+    width: 100%;
+    height: 44px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background: #ddd;
+    font-size: 18px;
+    line-height: 44px;
+}

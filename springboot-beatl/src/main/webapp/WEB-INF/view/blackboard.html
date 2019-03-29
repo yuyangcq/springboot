@@ -1,0 +1,33 @@
+@layout("/common/_container.html"){
+<style>
+    body {
+        overflow: hidden;
+    }
+
+    ul.time-horizontal li div.layui-timeline-content p {
+        position: absolute;
+        left: 140px;
+        top: -70px;
+        min-width: 170px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="layui-row">
+        
+        <div class="layui-col-md12" style="height:100%;">
+            <div class="layui-card">
+                <div class="layui-card-header">通知信息</div>
+                <div class="layui-card-body layui-text" style="height:640px;overflow: auto;">
+                    <table>
+                        @for(c in list){
+                        <tr>
+                            <td style="padding-bottom: 10px"><span style="font-weight: bold">${c.title!}</span><br/>${c.content!}</td>
+                        </tr>
+                        @}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@}

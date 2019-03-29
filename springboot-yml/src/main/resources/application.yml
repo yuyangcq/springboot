@@ -1,0 +1,20 @@
+
+test:
+  properties: yuyang
+
+bookName: 钢铁是是怎么炼成的
+bookAuthor: hali
+
+################################Person类注入###################################
+person:
+  lastName: hello
+  age: 20
+  boss: true
+  birth: 2018/03/18
+  maps: {k1: v1,k2: 12}
+  lists:
+  - hfbin
+  - zhaoliu
+  dog:
+    name: dog
+    age: 12

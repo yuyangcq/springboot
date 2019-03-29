@@ -1,0 +1,42 @@
+div.bootstrap-table table {
+    table-layout: fixed;
+}
+
+div.fixed-table-body-columns {
+    border-right: 1px solid #e7eaec;
+}
+
+/*核对结果*/
+.resultquery .heduiBox {width: 440px;margin-top: 20px;margin-left: 20px;float: left;}
+.resultquery .heduiBox button{border: 0px;  text-align: left;  padding: 0px;  width: 100px;  font-weight: 600;}
+.resultquery .searchBox {float: right; margin-right: 20px;margin-top: 20px;}
+.resultquery .resultShow{ float: left; margin-left: 20px; font-weight: 600;}
+
+/* 数据导入*/
+.dataimport .control-label{padding: 0px!important;margin-top: 5px; text-align: center;}
+.dataimport .col-sm-1 { padding: 0px!important;width: 70px!important;}
+
+/*新增*/
+.productadd {}
+.productadd .handleBox {text-align: center;}
+.productadd .handleBox .btn-info {background-color: #d6ae3c!important; border-color: #d6ae3c!important;}
+.productadd .handleBox .btn-danger {margin-left: 30px;background-color: #bbbbbb!important; border-color: #bbbbbb!important;}
+.productadd #name1Div .control-label,.productadd #pathDiv .control-label{width: 100px!important;}
+.productadd .type_box {width: 30%;float: left;height: 40px;text-align: left;}
+
+    /*修改*/
+.productdate {}
+.productdate .handleBox {text-align: center;}
+.productdate .handleBox .btn-info { background-color: #d6ae3c!important; border-color: #d6ae3c!important;}
+.productdate .handleBox .btn-danger {margin-left: 30px;background-color: #bbbbbb!important; border-color: #bbbbbb!important;}
+.productdate #nameDiv .control-label,.productdate #name1Div .control-label,.productdate #pathDiv .control-label{width: 100px!important;}
+.productdate .type_box {width: 30%;float: left;height: 40px;text-align: left;}
+
+/*文件上传样式*/
+.upload  { height: 100%;}
+.upload  #bussdate {height: 30px;margin-bottom: 10px;width: 87%;border-radius: 5px;border: 1px solid #ccc;padding-left: 10px;}
+.upload .handleBox .btn-info { background-color: #d6ae3c!important; border-color: #d6ae3c!important;}
+.upload .handleBox .btn-danger {margin-left: 30px;background-color: #bbbbbb!important; border-color: #bbbbbb!important;}
+.upload .easy_upload-container { width: 100%!important;}
+.upload .easy_upload_upbtn { margin-bottom: 0px!important;}
+.upload .easy_upload_delbtn { margin-bottom: 0px!important;margin-left: 5px;}

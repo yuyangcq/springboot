@@ -1,0 +1,57 @@
+
+.gray-bg { min-width: 1100px; overflow-x: scroll;}
+div.bootstrap-table table {  table-layout: fixed;  }
+div.fixed-table-body-columns {  border-right: 1px solid #e7eaec;  }
+.stepBox{  width: 974px;height: 55px;margin-top: -40px;  }
+.stepBox>img {width: 100%;height: 100%}
+.stepBox .step1,.stepBox .step2,.stepBox .step3 {display: none;}
+.stepBox .step1 {display: block;}
+.heduiBox {width: 440px;margin-top: 20px;}
+.heduiBox button{border: 0px;  text-align: left;  padding: 0px;  width: 100px;  font-weight: 600;}
+.heduiBox button:hover { border:0px;}
+.resultShow {display: inline-block;width: 100px;font-weight: 600;  float: left;}
+.layui-tab-content {width: 97%;margin-right: 3%;}
+.layui-tab-content .layui-tab-item {margin-left: 43px!important;}
+.layui-tab-content .bootstrap-table {margin-left: -16px;}
+.handleBox{position: relative;width: 190px; float: right;}
+.handleBox .handle {position: absolute;top: -100px;right: 4px;}
+.handleBox .handle button {width: 60px;  height: 30px;  border-radius: 8px;  border: 1px solid #ccc;  background: #eee;  color: #555;margin-right: 15px;}
+.handleBox .handle button:hover {background: #d6ae3c;color: white;}
+.handleBox>button { min-width: 60px;
+    height:30px;
+    border: 1px solid #ccc;
+    background: #eee;  color: #555;
+    border-radius: 8px;
+    padding: 0px 5px;
+    line-height: 32px;
+    float: right;
+    margin-right: 5px;
+}
+.handle2{width: 150px;}
+.tips { color: red;height: 12px; line-height: 30px;margin-left: -13px;}
+
+/*表格设高，防止出现滚动条*/
+.fixed-table-container { height: 422px!important;}
+
+
+/*loading style*/
+.layui-layer-loading.layui-layer-loading2 { height: 64px!important;width: 64px;background-size: 100% 100%; background-image: url("../../img/loading-2.gif")!important;}
+
+.selecteBox label {
+    padding-left: 4px;
+    cursor: pointer;
+    margin: 0;
+    vertical-align: middle;
+}
+.selecteBox input {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 2px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.layui-tab-item .col-sm-2 {
+    padding-left: 0px!important;
+    width: 140px!important;
+}

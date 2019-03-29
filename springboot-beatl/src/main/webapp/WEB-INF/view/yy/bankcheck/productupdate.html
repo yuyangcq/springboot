@@ -1,0 +1,62 @@
+@layout("/common/_container.html"){
+<link href="${ctxPath}/static/css/yyBankCheck/dataimport.css" rel="stylesheet">
+<div class="ibox float-e-margins">
+    <div class="ibox-content productdate">
+        <div class="form-horizontal" id="ylContentForm">
+            <input type="hidden" id="uid" value="${id!}" />
+            <input type="hidden" id="type" value="${type!}" />
+            <#input  type="text" id="name"  name="项目名称" value="${name!}" clickFun="DataImportInfoDlg.clearText(this)" placeholder="请输入项目名称"/>
+            <#input  type="text" id="path"  name="文件路径" value="${path!}" clickFun="DataImportInfoDlg.clearText(this)" placeholder="请输入文件路径"/>
+            <div class="row " style="margin-left: 38px;height: 80px;">
+                <span style="display: inline-block;width: 58px;font-weight: 600;float: left;margin-top: 8px;">类别：</span>
+                <div style="width: 600px;margin-left: 64px;height: 40px;">
+                    <div class="type_box" >
+                        <label class="control-label">普通银行</label>
+                        <input type="radio" name="each" value="0" />
+                    </div>
+                    <div class="type_box" >
+                        <label class="control-label">信用银行</label>
+                        <input type="radio" name="each" value="1" checked=""/>
+                    </div>
+                    <div class="type_box" >
+                        <label class="control-label">恒生柜台</label>
+                        <input type="radio" name="each" value="2" />
+                    </div>
+                </div>
+                <div style="width: 600px;margin-left: 64px;height: 40px;">
+                    <div class="type_box" >
+                        <label class="control-label">交收汇总表</label>
+                        <input type="radio" name="each" value="3" />
+                    </div>
+                    <div class="type_box" >
+                        <label class="control-label">交收汇总表（信用）</label>
+                        <input type="radio" name="each" value="4" />
+                    </div>
+                    <div class="type_box" >
+                        <label class="control-label">交收汇总表-港股通</label>
+                        <input type="radio" name="each" value="5" />
+                    </div>
+                </div>
+            </div>
+            <div class="handleBox">
+                <#button btnCss="info" name="确认" id="ensure" icon="fa-check" clickFun="DataImportInfoDlg.updateSubmit()"/>
+                <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="DataImportInfoDlg.close()"/>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/yy/bankcheck/dataimport_info.js"></script>
+<script type="text/javascript">
+    $(function () {
+        debugger;
+        var type= document.getElementById("type");
+        var types= document.getElementsByName("each");
+        for(var i = 0;i<types.length;i++){
+            if(types[i].value==type.value){
+                  types[i].checked=true;
+            }
+        }
+    });
+</script>
+<script src="${ctxPath}/static/modular/yy/bankcheck/dataimportlist.js?v=${date(),'yyyyMMddHHmmss'}"></script>
+@}
