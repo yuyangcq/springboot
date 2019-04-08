@@ -34,6 +34,7 @@ public class MpGenerator {
         gc.setBaseResultMap(true);// XML ResultMap
         gc.setBaseColumnList(false);// XML columList
         gc.setOpen(true);//生成后打开文件夹
+
         /* 自定义文件命名，注意 %s 会自动体填充表实属性！ */
 //         gc.setMapperName("%sDao");
 //         gc.setXmlName("%sDao");
@@ -95,7 +96,7 @@ public class MpGenerator {
         pc.setMapper("mapper");
         pc.setService("service");
         pc.setServiceImpl("service.Impl");
-        pc.setXml("mapperXml");
+        pc.setXml("mapping");
 
         mpg.setPackageInfo(pc);
 

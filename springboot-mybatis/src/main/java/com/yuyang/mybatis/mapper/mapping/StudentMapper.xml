@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.tebonx.cloud.yy.mapper.YlFileMapper">
+<mapper namespace="com.yuyang.mybatis.mapper.StudentMapper">
 
-	<select id="seletctDataImport" resultType="java.util.Map">
-		select y.`id`, y.`name`, y.prefix, y.path, max(u.lastuploadtime) as lastuploadtime from ylfile y left join ylfile_uploadlog u on y.id = u.fid
-		<if test="name != null and name != ''">
-			where y.`name` like CONCAT('%',#{name},'%')
-		</if>
-		group by y.id order by u.lastuploadtime desc
-	</select>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.yuyang.mybatis.model.Student">
+        <id column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_num" property="userNum"/>
+        <result column="user_sex" property="userSex"/>
+        <result column="user_province" property="userProvince"/>
+        <result column="user_phone" property="userPhone"/>
+    </resultMap>
+
+    <select id="findAllStudentPage" resultMap="BaseResultMap" resultType="com.yuyang.mybatis.model.Student">
+        select * from info_user
+        <where>
+            <if test="userName != null and userName != ''">
+                AND user_name = #{userName}
+            </if>
+        </where>
+    </select>
 
 </mapper>
